@@ -74,8 +74,49 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="./index-BHZVAqqg.js"></script>
-    <link rel="stylesheet" crossorigin href="./index-CogC2CaU.css">
+    
+    
+      <!-- Dual-Path Self-Healing Loader for GitHub Pages -->
+    <!-- Works whether files are uploaded into /assets/ or into root / -->
+    <script>
+      (function() {
+        var jsName = 'index-BPg9KZaF.js';
+        var cssName = 'index-BT2mOJJV.css';
+
+        function loadCss() {
+          var l = document.createElement('link');
+          l.rel = 'stylesheet';
+          l.crossOrigin = 'anonymous';
+          l.href = './assets/' + cssName;
+          l.onerror = function() {
+            var fallback = document.createElement('link');
+            fallback.rel = 'stylesheet';
+            fallback.crossOrigin = 'anonymous';
+            fallback.href = './' + cssName;
+            document.head.appendChild(fallback);
+          };
+          document.head.appendChild(l);
+        }
+
+        function loadJs() {
+          var s = document.createElement('script');
+          s.type = 'module';
+          s.crossOrigin = 'anonymous';
+          s.src = './assets/' + jsName;
+          s.onerror = function() {
+            var fallback = document.createElement('script');
+            fallback.type = 'module';
+            fallback.crossOrigin = 'anonymous';
+            fallback.src = './' + jsName;
+            document.body ? document.body.appendChild(fallback) : document.head.appendChild(fallback);
+          };
+          document.head.appendChild(s);
+        }
+
+        loadCss();
+        loadJs();
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
